@@ -4,6 +4,9 @@
     $passdb = "tpqidev3";
     $db = "tpqi";
 
+    $fieldString = ['username','password','name','sname','code','major','faculty','university','gender','birthdate'];
+    $fieldDigit = ['gpa'];
+
     $conn = mysqli_connect($host,$userdb,$passdb,$db);
 
     // Check connection

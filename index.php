@@ -17,3 +17,7 @@ if (mysqli_num_rows($query) > 0 ){
 }else{
     echo "ยังไม่มีนักเรียน ";
 }
+
+?>
+
+    <div><a href="insertform.php">เพิ่มข้อมูล</a></div>
