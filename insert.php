@@ -30,9 +30,9 @@ $sql .= " VALUES( '$_value )";
 $query = mysqli_query($conn,$sql);
 
 if ($query){
-    echo "เพิ่มข้อมูลสำเร็จ";
-    echo "<a href='liststudent.php'>ดูทั้งหมด</a>";
-    echo "<a href='insertform.php;>เพิ่มข้อมูลใหม่</a>";
+    echo "เพิ่มข้อมูลสำเร็จ<br>";
+    echo "<a href='index.php'>ดูทั้งหมด</a><br>";
+    echo "<a href='insertform.php'>เพิ่มข้อมูลใหม่</a>";
 }else{
     echo "ไม่สามารถเพิ่มข้อมูลได้<br>";
     echo mysqli_error($conn);
