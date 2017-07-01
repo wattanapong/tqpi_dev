@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
-    $userdb = "tpqi";
-    $passdb = "tpqidev3";
+    $userdb = "root";
+    $passdb = "";
     $db = "tpqi";
 
     $conn = mysqli_connect($host,$userdb,$passdb,$db);

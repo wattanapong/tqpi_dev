@@ -11,7 +11,7 @@ require 'config.php';
 // sql
 // UPDATE STUDENT SET username='u1',password='1234' WHERE id = 1
 $value = "username='".$_POST['username']."'";//username='u1'
-$value .= ",password='".$_POST['password']."'";//password='1234'
+$value .= ",password='".md5($_POST['password'])."'";//password='1234'
 $value .= ",name='".$_POST['name']."'";
 $value .= ",sname='".$_POST['sname']."'";
 $value .= ",code='".$_POST['code']."'";

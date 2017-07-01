@@ -8,8 +8,6 @@
 
 require 'config.php';
 
-$valueString = "";
-
 $sql = "DELETE FROM STUDENT WHERE id = ".$_GET['id'];
 
 $query = mysqli_query($conn,$sql);

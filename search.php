@@ -12,7 +12,7 @@ require 'config.php';
 $searchScript = " 1 ";
 
 if ( isset($_POST['username']) && !empty($_POST['username']) )
-    $searchScript .= "&& username LIKE '%".@$_POST['username']."%'";
+    $searchScript .= " && username LIKE '%".@$_POST['username']."%'";
 
 if ( isset($_POST['password']) && !empty($_POST['password']) )
     $searchScript .= " && password LIKE '%".@$_POST['password']."%'";

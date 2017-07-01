@@ -7,7 +7,7 @@
  */
 
 require 'config.php';
-
+//INSERT INTO TableName(field1,field2) VALUES('value of field1','value of field2')
 $sql = "INSERT INTO STUDENT(username,password,name,sname,code,major,faculty,university,gpa,gender,birthdate)";
 $sql .= " VALUES( '".$_POST['username']."','".$_POST['password']."','".$_POST['name']."','".$_POST['sname']."',
 '".$_POST['code']."','".$_POST['major']."','".$_POST['faculty']."','".$_POST['university']."',

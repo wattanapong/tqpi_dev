@@ -52,7 +52,7 @@ require 'config.php';
 
     <div style="padding:20px;">
         <span>gpa</span>
-        <span><input type="number" name="gpa" ></span>
+        <span><input type="number" name="gpa" step="0.01" ></span>
     </div>
 
     <div style="padding:20px;">
