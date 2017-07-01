@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
-    $userdb = "tpqi";
-    $passdb = "tpqidev3";
+    $userdb = "root";
+    $passdb = "";
     $db = "tpqi";
 
     $fieldString = ['username','password','name','sname','code','major','faculty','university','gender','birthdate'];

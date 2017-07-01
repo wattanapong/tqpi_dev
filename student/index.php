@@ -20,6 +20,6 @@ if (mysqli_num_rows($query) > 0 ){
 
 ?>
 
-    <div><a href="insertform.php">เพิ่มข้อมูล</a></div>
+    <div><a href="insert.php">เพิ่มข้อมูล</a></div>
 
-    <?php include 'liststudent.php';?>
+    <?php include 'list.php';?>
