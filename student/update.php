@@ -1,37 +1,44 @@
-
-
-<?php
+<?php 
 /**
  * Created by PhpStorm.
  * User: wattanapong suttapak
  * Date: 26-Jun-17
- * Time: 8:13 PM
+ * Time: 7:52 PM
  */
+$tbname = basename(__DIR__);
+require '../config.php';
+require '../'.$tbname.'.php';
 
-require 'config.php';
-if (!isset($_POST['id']) ) require 'form.php';
-else{
-	$student = "";
-	for($i=0;$i<sizeof($fieldString);$i++) {
-		$student[] = $fieldString[$i] ." = '".$_POST[$fieldString[$i]]."'";
-	}
+if ( isset($_POST[array_keys($attributes)[0]] ) ) {
+	// sql
+	// UPDATE STUDENT SET username='u1',password='1234' WHERE id = 1
+	$value = "username='".$_POST['username']."'";//username='u1'
+	$value .= ",password='".md5($_POST['password'])."'";//password='1234'
+	$value .= ",name='".$_POST['name']."'";
+	$value .= ",sname='".$_POST['sname']."'";
+	$value .= ",code='".$_POST['code']."'";
+	$value .= ",major='".$_POST['major']."'";
+	$value .= ",faculty='".$_POST['faculty']."'";
+	$value .= ",university='".$_POST['university']."'";
+	$value .= ",gpa='".$_POST['gpa']."'";
+	$value .= ",gender='".$_POST['gender']."'";
+	$value .= ",birthdate='".$_POST['birthdate']."'";
 
-	for($i=0;$i<sizeof($fieldDigit);$i++) {
-		$student[] = $fieldDigit[$i] ." = '".$_POST[$fieldDigit[$i]]."'";
-	}
-
-	$_student = implode(",",$student);
-
-	$sql = "UPDATE STUDENT  SET $_student WHERE id = ".$_POST['id'];
+	$sql = "UPDATE ".$tbname."  SET ".$value." WHERE id = ".$_POST['id'];
 
 	$query = mysqli_query($conn,$sql);
 
 	if ($query){
 		echo "แก้ไขข้อมูลสำเร็จแล้ว<br>";
 		echo "<a href='index.php'>ดูทั้งหมด</a><br>";
-		echo "<a href='insert.php'>เพิ่มข้อมูลใหม่</a>";
+		echo "<a href='insertform.php'>เพิ่มข้อมูลใหม่</a>";
 	}else{
 		echo "ไม่สามารถแก้ไขข้อมูลได้<br>";
 		echo mysqli_error($conn);
 	}
+}else{
+	$sql = "SELECT * FROM ".$tbname." WHERE id = ".$_GET['id'];
+	$query = mysqli_query($conn,$sql);
+	$row = mysqli_fetch_array($query);
+	include 'form.php';
 }
